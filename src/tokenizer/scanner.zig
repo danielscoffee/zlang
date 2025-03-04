@@ -3,8 +3,14 @@ const file = std.fs;
 
 /// This function is used to read file and by now its just return a print by reading a buffer
 // TODO: MAKE IT USABLE TO TOKENIZER
+// TODO: MAKE OUTPUT PATH AVAIBLE
 // WARN: LITERRALY ANYTHING IS READY LMAO
-pub fn readFile(comptime path: []const u8) !void {
+pub fn readFile(path_arg: ?[]const u8) !void {
+    if (path_arg == null) return {
+        std.log.err("Error: Input a path", .{});
+        return error.MissingInput;
+    };
+    const path: []const u8 = path_arg.?;
     // Verify file extension
     const file_extension = ".zl";
     if (!std.mem.endsWith(u8, path, file_extension)) {
