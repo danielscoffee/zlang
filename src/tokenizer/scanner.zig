@@ -3,9 +3,6 @@ const lexer = @import("tokenizer.zig");
 const file = std.fs;
 
 /// This function is used to read file and by now its just return a print by reading a buffer
-// TODO: MAKE IT USABLE TO TOKENIZER
-// TODO: MAKE OUTPUT PATH AVAIBLE
-// WARN: LITERRALY ANYTHING IS READY LMAO
 pub fn readFile(path: []const u8, output_path: ?[]const u8) !void {
     // Verify file extension
     const file_extension = ".zl";

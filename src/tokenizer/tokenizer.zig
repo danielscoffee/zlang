@@ -13,7 +13,6 @@ pub const TokenType = enum {
     COMMA,
     SEMICOLON,
     NEWLINE,
-    // Add other token types as needed
 };
 
 ///! Lexer
