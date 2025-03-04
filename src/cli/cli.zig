@@ -66,7 +66,7 @@ pub fn initCli() !void {
         return;
     }
 
-    try scan.readFile(input_path.?);
+    try scan.readFile(input_path.?, output_path);
 }
 
 fn command(short: *const [2:0]u8, long: []const u8, arg: []const u8) bool {
